@@ -30,15 +30,16 @@ function updateDisplay() {
     const transactionid = document.getElementById('transactionid').value || '-';
     const amount11 = document.getElementById('amount11').value || '-';
     const datetime = document.getElementById('datetime').value || '-';
+    const selectedImage = document.getElementById('imageSelect').value || '';
     const QRCode = document.getElementById('QRCode').value || '';
 
     let bankLogoUrl = '';
     switch (bank) {
         case 'ธ.กสิกรไทย':
-            bankLogoUrl = 'https://github.com/useronlineid/Theslipcame/blob/main/KBANK.png?raw=true';
+            bankLogoUrl = 'https://github.com/useronlineid/document1/blob/main/KBANK.png?raw=true';
             break;
         case 'ธ.กรุงไทย':
-            bankLogoUrl = 'https://github.com/useronlineid/Theslipcame/blob/main/KTB.png?raw=true';
+            bankLogoUrl = 'https://github.com/useronlineid/document1/blob/main/KTB.png?raw=true';
             break;
         case 'ธ.กรุงเทพ':
             bankLogoUrl = 'https://github.com/useronlineid/Theslipcame/blob/main/BBL.png?raw=true';
@@ -86,7 +87,7 @@ function updateDisplay() {
     
     // Load background image
     const backgroundImage = new Image();
-    backgroundImage.src = 'https://github.com/useronlineid/slipk1/blob/main/PNG-KBANK1.jpg?raw=true';
+    backgroundImage.src = 'https://github.com/useronlineid/test/blob/main/PNG-KBANK1.jpg?raw=true';
     backgroundImage.onload = function() {
         // Clear the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -112,10 +113,23 @@ function updateDisplay() {
             drawText(ctx, `${receiveraccount}`, 238.9, 697.7, '37.5px Sukhumvit Set', '#545454', '500', 'left', 1.5, 1, 0, 0, 500, 0.25);
             
             drawText(ctx, `${transactionid}`, 370.9, 885.4, '35.63px Sukhumvit Set', '#575757', '600', 'right', 1.5, 3, 0, 0, 500, 0);
-            drawText(ctx, `${amount11} บาท`, 370.9, 1003.6, '38.44px Sukhumvit Set', '#4b4b4b', '600', 'right', 1.5, 3, 0, 0, 500, 0);
-            drawText(ctx, `0.00 บาท`, 370.9, 1124.2, '38.44px Sukhumvit Set', '#4b4b4b', '600', 'right', 1.5, 3, 0, 0, 500, 0);
+            drawText(ctx, `${amount11}  บาท`, 370.9, 1003.6, '38.44px Sukhumvit Set', '#4b4b4b', '600', 'right', 1.5, 3, 0, 0, 500, 0);
+            drawText(ctx, `0.00  บาท`, 370.9, 1124.2, '38.44px Sukhumvit Set', '#4b4b4b', '600', 'right', 1.5, 3, 0, 0, 500, 0);
             drawText(ctx, `${QRCode}`, 238.9, 599.0, '33px Kanit', '#4e4e4e', '500', 'left', 1.5, 5, 0, 0, 500, 0);
-            drawImage(ctx, 'https://github.com/useronlineid/Theslipcame/blob/main/KBANK.png?raw=true', 34.6, 222, 157, 157);  
+            drawImage(ctx, 'https://github.com/useronlineid/document1/blob/main/KBANK.png?raw=true', 34.6, 222, 157, 157);  
+        
+          
+            // Draw the selected image
+            if (selectedImage) {
+                const customImage = new Image();
+                customImage.src = selectedImage;
+                customImage.onload = function() {
+                    ctx.drawImage(customImage, 20, 765, 840, 370); // Adjust the position and size as needed
+                }
+            }
+            //ถึงที่นี่
+            
+            
         }
     }
 }
