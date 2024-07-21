@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สลิปกสิกรไทย</title>
+    <title>Form and Display</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -19,7 +19,7 @@
             <h1>สลิปกสิกรไทย</h1>
             <div class="form">
                 <label for="sendername">ผู้โอน</label>
-                <input type="text" id="sendername" name="sendername" value="นาง จุฑามาศ ป" oninput="updateDisplay()">
+                <input type="text" id="sendername" name="sendername" value="นาง จุฑามาศ ปี้ห้า" oninput="updateDisplay()">
 
                 <input type="text" id="senderaccount" name="senderaccount" value="xxx-x-x5269-x" oninput="updateDisplay()">
 
@@ -54,6 +54,25 @@
                 <label for="datetime">เวลา (hh:mm:ss):</label>
                 <input type="datetime-local" id="datetime" step="1" required oninput="updateDisplay()">
 
+
+                <!-- Add this select element to your form-container in the HTML -->
+                 <label for="imageSelect">เลือกรูปภาพ</label>
+                   <select id="imageSelect" name="imageSelect" onchange="updateDisplay()">
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/NO.png?raw=true">เลือกสติ๊กเกอร์</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK1.png?raw=true">Image 1</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK2.png?raw=true">Image 2</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK3.png?raw=true">Image 3</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK4.png?raw=true">Image 4</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK5.png?raw=true">Image 5</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK6.png?raw=true">Image 6</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK7.png?raw=true">Image 7</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK8.png?raw=true">Image 8</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK9.png?raw=true">Image 9</option>
+                        <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK10.png?raw=true">Image 10</option>
+                    
+                    </select>
+                    
+                    
                 <label for="QRCode">QRCode</label>
                 <input type="file" id="QRCode" name="QRCode" accept="image/*" onchange="updateDisplay()">
             </div>
