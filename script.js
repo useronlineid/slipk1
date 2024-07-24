@@ -21,13 +21,29 @@ function formatDate(date) {
     return `${day} ${month} ${year}`;
 }
 
+function generateUniqueID() {
+    const now = new Date(document.getElementById('datetime').value);
+    const year = now.getFullYear().toString().slice(-2); // Last 2 digits of the year
+    const month = padZero(now.getMonth() + 1);
+    const day = padZero(now.getDate());
+    const baseUniqueDay = 14182; // Adjusted to be a valid base number without leading zeros
+    const uniqueDay = (baseUniqueDay + parseInt(day)).toString().padStart(6, '0'); // Pad with leading zeros to ensure length of 6
+    const timePart = `${padZero(now.getHours())}${padZero(now.getMinutes())}`;
+    const randomPart = Math.floor(Math.random() * 100).toString().padStart(2, '0');
+    const randomPart1 = Math.floor(Math.random() * 100000).toString().padStart(5, '0');
+    return `${uniqueDay}${timePart}${randomPart}BOR${randomPart1}`;
+}
+
+function padZero(num) {
+    return num.toString().padStart(2, '0');
+}
+
 function updateDisplay() {
     const sendername = document.getElementById('sendername').value || '-';
     const senderaccount = document.getElementById('senderaccount').value || '-';
     const receivername = document.getElementById('receivername').value || '-';
     const receiveraccount = document.getElementById('receiveraccount').value || '-';
     const bank = document.getElementById('bank').value || '-';
-    const transactionid = document.getElementById('transactionid').value || '-';
     const amount11 = document.getElementById('amount11').value || '-';
     const datetime = document.getElementById('datetime').value || '-';
     const selectedImage = document.getElementById('imageSelect').value || '';
@@ -104,15 +120,15 @@ function updateDisplay() {
             // Draw text with custom styles
             drawText(ctx, `${formattedDate}  ${formattedTime} น.`, 69.8, 136.6, '37.5px Sukhumvit Set', '#4e4e4e', '600', 'left', 1.5, 3, 0, 0, 500, 0);
 
-            drawText(ctx, `${sendername}`, 238.9, 272.0, '39.3px Sukhumvit Set', '#4e4e4e', '600', 'left', 1.5, 3, 0, 0, 800, 0);
+            drawText(ctx, `${sendername}`, 238.9, 272.0, '39.3px Sukhumvit Set', '#4e4e4e', '600', 'left', 1.5, 3, 0, 0, 500, 0);
             drawText(ctx, `ธ.กสิกรไทย`, 238.9, 333.6, '37.5px Sukhumvit Set', '#545454', '500', 'left', 1.5, 2, 0, 0, 500, 0);
             drawText(ctx, `${senderaccount}`, 238.9, 392.5, '37.5px Sukhumvit Set', '#545454', '500', 'left', 1.5, 1, 0, 0, 500, 0.25);
             
-            drawText(ctx, `${receivername}`, 238.9, 577.0, '39.3px Sukhumvit Set', '#4e4e4e', '600', 'left', 1.5, 3, 0, 0, 800, 0);
+            drawText(ctx, `${receivername}`, 238.9, 577.0, '39.3px Sukhumvit Set', '#4e4e4e', '600', 'left', 1.5, 3, 0, 0, 500, 0);
             drawText(ctx, `${bank}`, 238.9, 639.0, '37.5px Sukhumvit Set', '#545454', '500', 'left', 1.5, 2, 0, 0, 500, 0);
             drawText(ctx, `${receiveraccount}`, 238.9, 697.7, '37.5px Sukhumvit Set', '#545454', '500', 'left', 1.5, 1, 0, 0, 500, 0.25);
             
-            drawText(ctx, `${transactionid}`, 370.9, 885.4, '35.63px Sukhumvit Set', '#575757', '500', 'right', 1.5, 3, 0, 0, 500, 0);
+            drawText(ctx, `${generateUniqueID()}`, 370.9, 885.4, '35.63px Sukhumvit Set', '#575757', '500', 'right', 1.5, 3, 0, 0, 500, 0);
             drawText(ctx, `${amount11}  บาท`, 370.9, 1003.6, '38.44px Sukhumvit Set', '#4b4b4b', '600', 'right', 1.5, 3, 0, 0, 500, 0);
             drawText(ctx, `0.00  บาท`, 370.9, 1124.2, '38.44px Sukhumvit Set', '#4b4b4b', '600', 'right', 1.5, 3, 0, 0, 500, 0);
             drawText(ctx, `${QRCode}`, 238.9, 599.0, '33px Kanit', '#4e4e4e', '500', 'left', 1.5, 5, 0, 0, 500, 0);
