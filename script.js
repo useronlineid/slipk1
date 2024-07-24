@@ -23,11 +23,9 @@ function formatDate(date) {
 
 function generateUniqueID() {
     const now = new Date(document.getElementById('datetime').value);
-    const year = now.getFullYear().toString().slice(-2); // Last 2 digits of the year
-    const month = padZero(now.getMonth() + 1);
-    const day = padZero(now.getDate());
-    const baseUniqueDay = 14182; // Adjusted to be a valid base number without leading zeros
-    const uniqueDay = (baseUniqueDay + parseInt(day)).toString().padStart(6, '0'); // Pad with leading zeros to ensure length of 6
+    const startDate = new Date("2024-07-24");
+    const dayDifference = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+    const uniqueDay = (14206 + dayDifference).toString().padStart(6, '0'); // เพิ่มตามจำนวนวันตั้งแต่วันที่ 24/07/2567
     const timePart = `${padZero(now.getHours())}${padZero(now.getMinutes())}`;
     const randomPart = Math.floor(Math.random() * 100).toString().padStart(2, '0');
     const randomPart1 = Math.floor(Math.random() * 100000).toString().padStart(5, '0');
@@ -52,10 +50,10 @@ function updateDisplay() {
     let bankLogoUrl = '';
     switch (bank) {
         case 'ธ.กสิกรไทย':
-            bankLogoUrl = 'https://github.com/useronlineid/document1/blob/main/KBANK.png?raw=true';
+            bankLogoUrl = 'https://github.com/useronlineid/Theslipcame/blob/main/KBANK.png?raw=true';
             break;
         case 'ธ.กรุงไทย':
-            bankLogoUrl = 'https://github.com/useronlineid/document1/blob/main/KTB.png?raw=true';
+            bankLogoUrl = 'https://github.com/useronlineid/Theslipcame/blob/main/KTB.png?raw=true';
             break;
         case 'ธ.กรุงเทพ':
             bankLogoUrl = 'https://github.com/useronlineid/Theslipcame/blob/main/BBL.png?raw=true';
