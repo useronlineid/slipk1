@@ -101,7 +101,7 @@ function updateDisplay() {
     
     // Load background image
     const backgroundImage = new Image();
-    backgroundImage.src = 'https://github.com/useronlineid/test/blob/main/PNG-KBANK1.jpg?raw=true';
+    backgroundImage.src = 'https://github.com/useronlineid/slipk1/blob/main/PNG-KBANK1.jpg?raw=true';
     backgroundImage.onload = function() {
         // Clear the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -130,7 +130,7 @@ function updateDisplay() {
             drawText(ctx, `${amount11}  บาท`, 370.9, 1003.6, '38.44px Sukhumvit Set', '#4b4b4b', '600', 'right', 1.5, 3, 0, 0, 500, 0);
             drawText(ctx, `0.00  บาท`, 370.9, 1124.2, '38.44px Sukhumvit Set', '#4b4b4b', '600', 'right', 1.5, 3, 0, 0, 500, 0);
             drawText(ctx, `${QRCode}`, 238.9, 599.0, '33px Kanit', '#4e4e4e', '500', 'left', 1.5, 5, 0, 0, 500, 0);
-            drawImage(ctx, 'https://github.com/useronlineid/document1/blob/main/KBANK.png?raw=true', 34.6, 222, 157, 157);  
+            drawImage(ctx, 'https://github.com/useronlineid/Theslipcame/blob/main/KBANK.png?raw=true', 34.6, 222, 157, 157);  
         
           
             // Draw the selected image
