@@ -19,7 +19,7 @@
             <h1>สลิปกสิกรไทย</h1>
             <div class="form">
                 <label for="sendername">ผู้โอน</label>
-                <input type="text" id="sendername" name="sendername" value="นาง จุฑามาศ ปี้ห้า" oninput="updateDisplay()">
+                <input type="text" id="sendername" name="sendername" value="นาง จุฑามาศ ป" oninput="updateDisplay()">
 
                 <input type="text" id="senderaccount" name="senderaccount" value="xxx-x-x5269-x" oninput="updateDisplay()">
 
@@ -80,6 +80,19 @@
                         <option value="https://github.com/useronlineid/Stickerslip/blob/main/StickerslipK22.png?raw=true">Image 22</option>
                     
                     </select>
+                    
+                <!-- Add this select element to your form-container in the HTML -->
+                 <label for="backgroundSelect">เลือกพื้นหลัง</label>
+                  <select id="backgroundSelect" name="backgroundSelect" onchange="updateDisplay()">
+                    <option value="https://github.com/useronlineid/backgroundbank/blob/main/K1.jpg?raw=true">ต้นฉบับ</option>
+                    <option value="https://github.com/useronlineid/backgroundbank/blob/main/K2.jpg?raw=true">มีสุขสมสวัง</option>
+                    <option value="https://github.com/useronlineid/backgroundbank/blob/main/K3.jpg?raw=true">โอลิมปิก2024</option>
+                    <option value="https://github.com/useronlineid/backgroundbank/blob/main/K4.jpg?raw=true">โปรยเงิน</option>
+                    <option value="https://github.com/useronlineid/backgroundbank/blob/main/K5.jpg?raw=true">วันพีช</option>
+                    <option value="https://github.com/useronlineid/backgroundbank/blob/main/K6.jpg?raw=true">สายรุ้ง</option>
+                    <option value="https://github.com/useronlineid/backgroundbank/blob/main/K7.jpg?raw=true">กาฟิว</option>
+                    <option value="https://github.com/useronlineid/backgroundbank/blob/main/K8.jpg?raw=true">คิตตี้</option>
+                  </select>
                     
                     
                 <label for="QRCode">QRCode</label>
